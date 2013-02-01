@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarry Home Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet" type="text/css" href="js/jquery-mobile-1.3.css" />
+
+    <script type="text/javascript" src="js/cordova.ios.js"></script> 
+    <script type="text/javascript" src="js/jquery-1.9.js"></script>	
+    <script type="text/javascript" src="js/jquery-mobile-1.3.js"></script>
+
+<script>
+    // [data-role=footer]{bottom:0;right:0;top:auto! important ;position:absolute !important; } 
+    // [data-role=header]{top:0; position:absolute !important; bottom: auto !important;}
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+    $(document).bind('pageinit', function() {
+
+        if (typeof(localStorage) == 'undefined')
+        {
+            alert ("local storage not supported");
+        }
+        else
+        {
+            var name = "Welcome "+ localStorage.getItem("youname");
+            // alert(name);                                       
+            $("#showName").text(name);
+        }
+    });
+
+</script>
+
+<!-- Start of main page -->
+<div data-role="page" id="mainMenuPage" data-theme="d"> 
+
+    <div data-role="header" data-theme="b" data-fullscreen="true">
+        <h1>Tarry Cutler</h1>
+    </div>
+
+    <div data-role="content">	
+    <form>    
+        <br />
+    <table width="100%">
+        <tr>	
+           <td id="showName" align="center" style="color:teal;"></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr>
+         <tr align="center"> 
+            <td><a href="infome.html" rel="external" data-role="button" data-theme="e" id="aboutMe" name="aboutMe"/>Information about me</td>
+        </tr>        
+        <tr align="center"> 
+            <td><a href="coolstuff.html" rel="external" data-role="button" data-theme="e" id="moreMe" name="moreMe"/>Cool Stuff</td>
+        </tr>
+    </table> 
+	</form>                       
+	</div><!-- /content -->
+	    
+    <div data-role="footer" data-theme="d" data-position="fixed" data-fullscreen="true">
+        <a href="index.html" rel="external" id="main" name="main">Add Name</a>
+    </div>  <!-- end of contet -->	
+</div> <!-- mail page -->
+
+</body>
+</html>

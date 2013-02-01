@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarry World</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet" type="text/css" href="css/jquery-mobile-1.3.css" />
+
+    <script type="text/javascript" src="js/cordova.ios.js"></script> 
+    <script type="text/javascript" src="js/jquery-1.9.js"></script>	
+    <script type="text/javascript" src="js/jquery-mobile-1.3.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+ 
+    $(document).bind('pageinit', function() {
+
+        $("#setName").click(function() {
+            if (typeof(localStorage) == 'undefined')
+            {
+                alert ("local storage not supported");
+            }
+            else
+            {
+                var yourName = $("#lname").val(); 
+                localStorage.setItem("youname",yourName);
+            }
+        });
+    });
+
+        
+</script>
+
+<!-- Start page -->
+<div data-role="page" id="namePage" data-theme="d"> 
+    <div data-role="header" data-theme="b" data-fullscreen="true">
+        <h1>Tarry Cutler</h1>
+    </div>
+
+    
+    <div data-role="content">	
+        <form>
+		<center><h3 style="color:#999;">Welcome to my Mobile Website.</h3></center>
+	
+        <table width="100%">
+            <tr align="center">
+                <td>Please Enter Your Name</td>
+            </tr>
+            <tr align="center">
+                <td><input style="width:175px;" id="lname" name="lname" type="text" value="" /></td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>        
+            <tr align="center"> 
+    			<td colspan=2><a href="home.html" rel="external"  data-role="button" data-theme="e" id="setName" name="setName" value="Submit" />Submit Name</td>
+            </tr>
+        </table> 
+        </form>
+	</div> <!-- end of content -->
+	
+    <div data-role="footer" data-theme="b" data-position="fixed" data-fullscreen="true">
+        &nbsp;
+    </div>  <!-- end of contet -->
+    
+</div><!-- name page -->
+</body>
+</html>
